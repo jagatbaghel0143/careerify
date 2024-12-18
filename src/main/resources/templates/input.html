@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Careerify</title>
+    <link rel="stylesheet" type="text/css" href="/css/input.css">
+</head>
+  <body>
+    <header>Careerify - AI Powered Career Counselor</header>
+
+    <div class="form-container">
+      <h1 style="text-align: center">Ask Careerify</h1>
+
+      <form
+        method="POST"
+        enctype="multipart/form-data"
+        th:action="@{/careerify/ask}"
+      >
+        <div class="form-field">
+          <label for="textInput">Question:</label>
+          <textarea
+            id="textInput"
+            name="textInput"
+            rows="4"
+            cols="50"
+            placeholder="Enter any text here..."
+            style="resize: none"
+          ></textarea>
+        </div>
+
+        <div class="form-field">
+          <label for="imageFile">Query with Image:</label>
+          <input type="file" id="imageFile" name="imageFile" accept="image/*" />
+          <p style="font-size: 12px; color: gray">
+            Acceptable formats: JPG, JPEG, PNG, GIF, etc.
+          </p>
+        </div>
+        <button type="submit">Ask</button>
+      </form>
+      <div
+        th:if="${message}"
+        th:text="${message}"
+        class="success-message"
+        style="margin-top: 20px"
+      ></div>
+    </div>
+    <footer>Powered by Gemini, Google Cloud Storage</footer>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Careerify</title>
+    <link rel="stylesheet" type="text/css" href="/css/response.css">
+</head>
+<body>
+
+<header>
+    Careerify - AI Powered Career Counselor
+</header>
+
+<div class="container">
+    <div class="response-title">Careerify Response</div>
+
+    <div class="response-content">
+        <pre th:text="${geminiResponse}">Response will be displayed here.</pre>
+    </div>
+
+    <a th:href="@{/careerify/home}" class="back-button">Back</a>
+</div>
+
+<footer>
+    Powered by Gemini, Google Cloud Storage
+</footer>
+
+</body>
+</html>
